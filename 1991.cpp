@@ -8,7 +8,7 @@ struct Node {
 };
 
 void preorder(Node *root) {
-	if (root == nullptr) {
+	if (!root) {
 		return;
 	}
 	cout << root->data;
@@ -17,7 +17,7 @@ void preorder(Node *root) {
 }
 
 void inorder(Node *root) {
-	if (root == nullptr) {
+	if (!root) {
 		return;
 	}
 	inorder(root->left);
@@ -26,7 +26,7 @@ void inorder(Node *root) {
 }
 
 void postorder(Node *root) {
-	if (root == nullptr) {
+	if (!root) {
 		return;
 	}
 	postorder(root->left);
