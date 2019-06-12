@@ -1,6 +1,8 @@
 import sys
 import operator
 
+# TODO: Reduce time complexty.
+
 
 def check(row, col, size):
     if size == 1:
