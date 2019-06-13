@@ -1,6 +1,6 @@
-N = list(map(int, list(input())))
-if N.count(0) > 0 and sum(N) % 3 == 0:
-    N.sort(reverse=True)
-    print(''.join(map(str, N)))
+a = list(input())
+a.sort()
+if sum(map(int, a)) % 3 == 0 and a[0] == '0':
+    print(''.join(a[::-1]))
 else:
     print(-1)
