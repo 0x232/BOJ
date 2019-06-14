@@ -1,3 +1,6 @@
+# TODO: optimize the code
+
+
 def visit(N, r, c):
     if N == 1:
         return 2*r + c
