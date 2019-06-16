@@ -14,7 +14,6 @@ for _ in range(m):
 for k in range(n):
     for i in range(n):
         for j in range(n):
-            print(d)
             if d[i][j] > d[i][k] + d[k][j]:
                 d[i][j] = d[i][k] + d[k][j]
 
