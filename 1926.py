@@ -15,9 +15,9 @@ def BFS(n, m, row, col):
         dr = [1, -1, 0, 0]
         dc = [0, 0, -1, 1]
         for i in range(4):
-            if is_in_range(n, m, r+dr[i], c+dc[i]) and\
-                not visited[r+dr[i]][c+dc[i]] and\
-                    paper[r+dr[i]][c+dc[i]] == '1':
+            if is_in_range(n, m, r+dr[i], c+dc[i]) and \
+               not visited[r+dr[i]][c+dc[i]] and \
+               paper[r+dr[i]][c+dc[i]] == '1':
                 size_of_picture += 1
                 q.put((r+dr[i], c+dc[i]))
                 visited[r+dr[i]][c+dc[i]] = True
