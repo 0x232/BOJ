@@ -1,4 +1,5 @@
 import sys
+import collections
 
 
 def is_in_range(n, m, row, col):
@@ -11,11 +12,11 @@ def BFS(n, m, row, col, number_of_ripe_tomato):
         for j in range(m):
             visited[i][j] = False
 
-    q = [(row, col)]
+    q = collections.deque([(row, col)])
     visited[row][col] = True
     days_to_ripen[row][col] = 0
     while q:
-        r, c = q.pop(0)
+        r, c = q.popleft()
         for dr, dc in (-1, 0), (1, 0), (0, -1), (0, 1):
             if is_in_range(n, m, r+dr, c+dc) and \
                box[r+dr][c+dc] == '0' and \
