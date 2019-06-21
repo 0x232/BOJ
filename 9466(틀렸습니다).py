@@ -5,6 +5,12 @@ def find_cycle(u, v):
         visited[v] = True
         return find_cycle(u, edge[v])
 
+'''
+1
+5
+5 3 4 5 1
+'''
+
 edge = [0] * (100001)
 visited = [False] * (100001)
 
