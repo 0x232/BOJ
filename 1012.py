@@ -1,17 +1,14 @@
-import queue
-
-
 def is_in_range(n, m, row, col):
     return row >= 0 and row < n and col >= 0 and col < m
 
 
 def BFS(n, m, row, col):
-    q = queue.Queue()
+    q = []
     # number_of_cabbage = 1
-    q.put((row, col))
+    q.append((row, col))
     visited[row][col] = True
-    while not q.empty():
-        r, c = q.get()
+    while q:
+        r, c = q.pop(0)
         dr = [-1, 1, 0, 0]
         dc = [0, 0, -1, 1]
         for i in range(4):
@@ -19,7 +16,7 @@ def BFS(n, m, row, col):
                not visited[r+dr[i]][c+dc[i]] and \
                field[r+dr[i]][c+dc[i]] == 1:
                 # number_of_cabbage += 1
-                q.put((r+dr[i], c+dc[i]))
+                q.append((r+dr[i], c+dc[i]))
                 visited[r+dr[i]][c+dc[i]] = True
     # return number_of_cabbage
 
