@@ -1,3 +1,6 @@
+import sys
+
+
 def is_in_range(n, m, row, col):
     return row >= 0 and row < n and col >= 0 and col < m
 
