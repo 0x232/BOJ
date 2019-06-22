@@ -1,4 +1,4 @@
-import queue
+import collections
 
 
 def is_in_range(n, m, row, col):
@@ -6,18 +6,17 @@ def is_in_range(n, m, row, col):
 
 
 def BFS(n, m, row, col):
-    q = queue.Queue()
-    q.put((row, col))
+    queue = collections.deque([(row, col)])
     distance[row][col] = 1
-    while not q.empty():
-        r, c = q.get()
+    while queue:
+        r, c = queue.popleft()
         dr = [-1, 1, 0, 0]
         dc = [0, 0, -1, 1]
         for i in range(4):
             if is_in_range(n, m, r+dr[i], c+dc[i]) and \
                distance[r+dr[i]][c+dc[i]] == -1 and \
                maze[r+dr[i]][c+dc[i]] == '1':
-                q.put((r+dr[i], c+dc[i]))
+                queue.append((r+dr[i], c+dc[i]))
                 distance[r+dr[i]][c+dc[i]] = distance[r][c] + 1
 
 maze = []
