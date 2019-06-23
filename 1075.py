@@ -1,3 +1,5 @@
+# TODO: refactor code
+
 N = int(input())
 F = int(input())
 temp = N - N % 100
