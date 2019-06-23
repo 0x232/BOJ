@@ -1,4 +1,5 @@
 import collections
+# TODO: refactor code
 
 
 def check_field():
