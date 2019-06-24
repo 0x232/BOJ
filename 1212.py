@@ -1,11 +1,13 @@
+converter = ['000', '001', '010', '011',
+             '100', '101', '110', '111']
 for i, s in enumerate(input()):
-    n_8 = int(s)
-    n_2 = ''
-    if n_8 == 0:
-        n_2 = '0'
-    while n_8 > 0:
-        n_2 = str(n_8 % 2) + n_2
-        n_8 = n_8 // 2
+    n = int(s)
     if i > 0:
-        n_2 = '0'*(3-len(n_2)) + n_2
-    print(n_2, end='')
+        print(converter[n], end='')
+    else:
+        if n < 2:
+            print(converter[n][2], end='')
+        elif n < 4:
+            print(converter[n][1:], end='')
+        else:
+            print(converter[n], end='')
