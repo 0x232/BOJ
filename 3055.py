@@ -11,30 +11,25 @@ for i in range(R):
         if grid[i][j] == '*':
             queue.appendleft(('*', i, j, 0))
             visited[i][j] = True
-        if grid[i][j] == 'D':
-            queue.append(('D', i, j, 0))
+        if grid[i][j] == 'S':
+            queue.append(('S', i, j, 0))
             visited[i][j] = True
 
-result = 'KAKTUS'
+success, result = False, 'KAKTUS'
 while queue:
     g, r, c, t = queue.popleft()
     for i, j in direction:
         nr, nc = r+i, c+j
         if nr >= 0 and nr < R and nc >= 0 and nc < C:
-            if g == 'D' and grid[nr][nc] == 'S':
-                result = t+1
+            if g == 'S' and grid[nr][nc] == 'D':
+                success, result = True, t+1
                 break
-        # if nr >= 0 and nr < R and nc >= 0 and nc < C and \
             if grid[nr][nc] == '.' and not visited[nr][nc]:
                 queue.append((g, nr, nc, t+1))
                 visited[nr][nc] = True
                 if g == '*':
                     grid[nr][nc] = '*'
-    print(r, c)
-    for i in range(R):
-        print(''.join(grid[i]))
+    if success:
+        break
+
 print(result)
-'''
-for i in range(R):
-    print(''.join(grid[i]))
-'''
