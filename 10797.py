@@ -1,2 +1,3 @@
-s = input()
-print(input().count(s))
+n = int(input())
+a = list(map(int, input().split()))
+print(a.count(n))
