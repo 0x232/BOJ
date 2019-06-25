@@ -1,8 +1,7 @@
+import re
 s = input()
 bomb = input()
-while bomb in s:
-    s = s.replace(bomb, '', 1)
-if not s:
-    print('FRULA')
-else:
-    print(s)
+p = re.compile(bomb)
+while p.search(s):
+    s = re.sub(bomb, '', s)
+print(s if s else 'FRULA')
