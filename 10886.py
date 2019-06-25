@@ -1,3 +1,6 @@
+# Better Solution:
+# https://www.acmicpc.net/source/13139101
+
 N = int(input())
 cute = 0
 for _ in range(N):
