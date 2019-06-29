@@ -27,10 +27,6 @@ int main() {
 	cin.tie(NULL);
 	int N, M;
 	cin >> N >> M;
-<<<<<<< HEAD
-=======
-	vector<bool> visited(N, false);
->>>>>>> 9b5f02990c86f454b1964fbb1ad082cbd7aa9fe5
 	vector<int> numbers;
 	for (int i = 0; i < N; i++) {
 		int number;
